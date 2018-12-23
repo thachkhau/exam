@@ -1,0 +1,56 @@
+.card-img-top {
+    height: 180px !important;
+}
+.card {
+    min-height: 250px !important;
+}
+
+.success img{
+    height: 150px;
+}
+.btn-primary{
+    margin-bottom: 10px;
+}
+.carousel-item img{
+    height: auto;
+    width: 100%;
+
+}
+.container{
+    max-width: 1200px;
+}
+form.form-signin{
+    width: 600px;
+    margin: auto;
+}
+.navtext{
+    margin: 0;
+    padding: 15px;
+}
+
+.navbar-brand{
+    width: 65px;
+    height: 65px;
+}
+
+.navcart{
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+}
+
+.navright{
+    flex: 1;
+    justify-content: flex-end;
+}
+li.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+form.register{
+    width: 600px;
+    margin: auto;
+}
+button.register{
+    padding-top: 10px;
+}

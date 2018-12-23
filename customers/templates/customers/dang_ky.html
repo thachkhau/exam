@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% if registered %}
+<h4>Bạn đã đăng ký thành công</h4>
+{% else %}
+<form action="." method="post" class = "register">
+    <h4 style="text-align:center">ĐĂNG KÝ</h4>
+    <div class="form-row">
+        <label for="inputname">Họ tên</label>
+            <input class="form-control" type="text" name="ho_ten" maxlength="50" required="" id="id_ho_ten">
+    </div>
+    <div class="form-row">
+        <label for="inputEmail4">Email</label>
+            <input class="form-control" type="text" name="email" maxlength="50" required="" id="id_email">
+    </div>
+    <div class="form-row">
+        <label for="inputusername">Username</label>
+            <input class="form-control" type="text" name="user_name" maxlength="50" required="" id="id_user_name">
+    </div>
+    <div class="form-row">
+        <label for="inputpassword">Password</label>
+            <input class="form-control" type="password" name="mat_khau" maxlength="50" required="" id="id_mat_khau">
+    </div>
+    <div class="form-row">
+        <label for="inputpassword">Confirm </label>
+            <input class="form-control" type="password" name="confirm" maxlength="50" required="" id="id_confirm">
+            {% if form.confirm.errors %}
+            <span style="color:red">{{form.confirm.errors}}</span>
+            {% endif %}
+    </div>
+    <div class="form-row">
+        <label for="inputPhone">Phone</label>
+            <input class="form-control" type="number" name="phone" maxlength="50" required="" id="id_phone">
+    </div>
+    <div class="form-row">
+        <label for="inputAddress">Address</label>
+        <input class="form-control" type="text" name="dia_chi" maxlength="50" required="" id="id_dia_chi">
+    </div>
+    <div class="col-md-12 text-center" style="padding-top: 15px;">
+        <button type="submit" value="register" class="btn btn-primary">Đăng ký</button>
+    </div>
+    {% csrf_token %}
+</form>
+{% endif %}
+{% endblock %}

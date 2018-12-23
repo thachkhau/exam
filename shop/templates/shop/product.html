@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+{% load staticfiles %}
+<div class="container">
+    <div class="row text-center">
+        {% if products %}
+        {% for product in products %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{{product.hinh.url}}" alt="{{product.ten_sp}}" width="300">
+                <div class="card-body">
+                    <p class="card-text">{{product.ten_sp}}<br />{{product.don_gia}} vnđ</p>
+                </div>
+                <div>
+                    <a href="{% url 'shop:product_detail' product.pk%}" class='btn btn-primary' style="float: center;">Xem
+                        thêm </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif%}
+    </div>
+    <div class="row">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-left">
+                {% if products.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ products.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#"><span>&laquo;</span></a></li>
+                {% endif %}
+                {% for i in products.paginator.page_range %}
+                {% if products.number == i %}
+                <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if products.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ products.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#"><span>&raquo;</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}

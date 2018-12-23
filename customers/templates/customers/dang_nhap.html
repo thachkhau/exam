@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+{% if registered %}
+<h6>Đăng ký thành công, vui lòng đăng nhập hệ thống</h6>
+{% endif %}
+<form class="form-signin" method="post">
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;">Vui lòng nhập thông tin đăng nhập</h1>
+    <div class="form-group">
+        <label for="exampleInputUsername">Username</label>
+        <input type="text" name="user_name" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp"
+            placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="mat_khau" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    {% csrf_token%}
+    {{err}}
+    {{request.session.username}}
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form>
+{% endblock %}

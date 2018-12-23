@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+<h1>THÔNG TIN KHÁCH HÀNG</h1>
+<h3>Họ tên: {{profile.ho_ten}}</h3>
+<h3>Số điện thoại: {{profile.phone}}</h3>
+<h3>Email: {{profile.email}}</h3>
+<h3>Địa chỉ: {{profile.dia_chi}}</h3>
+
+<a class="nav-link" href="{% url 'customers:dang_xuat' %}">Log out</a>
+{% endblock %}
