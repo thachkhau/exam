@@ -27,7 +27,7 @@ SECRET_KEY = ')0lyr#-vtoo61e_4vs804lhm$^koz$ogl+*h&@00v@ljpkzkbf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['thachkhau.pythonanywhere.com']
 
 
 # Application definition
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'webpages',
     'users',
-    'django_bootstrap_breadcrumbs',
 ]
 
 MIDDLEWARE = [
